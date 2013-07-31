@@ -5,6 +5,10 @@ Let your users input html into your textareas without losing any sleep.
 django-secure-input sanitizes user's input and allows only some tags to be
 interpreted as html and escapes the rest. By default, <script> are not allowed.
 
+.. image::
+    https://secure.travis-ci.org/rochapps/django-secure-input.png?branch=master
+    :alt: Build Status
+        :target: https://secure.travis-ci.org/rochapps/django-secure-input
 
 Requirements/Installing
 -----------------------------------
@@ -25,8 +29,10 @@ by our validation method can be overwritten, to set your own overwrite this on
 your settings.py file:
 
     'ALLOWED_TAGS':       Tuple of allowed tags, for example: ('p', 'h2', 'h3').
+
     'ALLOWED_STYLES':     Tuple of inline style allowable in your html, for
                           example: ('font', 'font-size', 'color').
+
     'ALLOWED_ATTRIBUTES': A dict of tags -> attributes, for example:
                           {'a': ['href', 'title'], '*': ['class']}
 

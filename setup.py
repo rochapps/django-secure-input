@@ -33,6 +33,7 @@ setup(
         'Operating System :: OS Independent',
     ],
     long_description=read_file('README.rst'),
+    install_requires=['bleach>=1.2.2'],
     test_suite="runtests.runtests",
     tests_require=(
         'bleach>=1.2.2',
