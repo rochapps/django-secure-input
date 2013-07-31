@@ -8,11 +8,16 @@ Replace this with more appropriate tests for your application.
 from django import forms
 from django.test import TestCase
 
-from secure_input.fields import SecureCharFieldInput
+from .fields import SecureCharFieldInput
+from .widgets import WYSIWYGWidget
 
 
 class ExampleForm(forms.Form):
     text = SecureCharFieldInput()
+
+
+class ExampleWYSIWYGForm(forms.Form):
+    text = SecureCharFieldInput(widget=WYSIWYGWidget)
 
 
 class SecureTextInputTests(TestCase):
@@ -67,3 +72,18 @@ class SecureTextInputTests(TestCase):
         cleaned_text = form.cleaned_data['text']
         escaped_text = text + '</p>'  # Bleach closes unclosed tags.
         self.assertEqual(cleaned_text, escaped_text)
+
+
+class WYSIWYGWidgetTest(TestCase):
+
+    def setUp(self):
+        self.form = ExampleWYSIWYGForm()
+
+    def test_render(self):
+        rendered_form = self.form.as_p()
+        expected = u'<p><label for="id_text">Text:</label> ' \
+                   u'<input class="hidden secure-input" ' \
+                   u'data-editor="text-secure-input" id="id_text" ' \
+                   u'name="text" type="text" /><div class="bootstrap-wysiwyg"' \
+                   u' id="text-secure-input" /></div></p>'
+        self.assertEqual(rendered_form, expected)

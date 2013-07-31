@@ -50,6 +50,13 @@ Example
             model = MyModel
 
 
+Documentation
+-----------------------------------
+
+Additional documentation on using django-sticky-uploads is available on
+`Read The Docs <http://readthedocs.org/docs/django-sticky-uploads/>`_.
+
+
 Running the Tests
 ------------------------------------
 

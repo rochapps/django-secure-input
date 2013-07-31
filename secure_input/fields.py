@@ -20,7 +20,7 @@ class SecureCharFieldInput(forms.CharField):
     """Widget that provides custom clean method to sanitize user's text input.
     """
 
-    widget = forms.TextInput
+    widget = forms.Textarea
 
     def clean(self, value):
         """Returns sanitized text"""
