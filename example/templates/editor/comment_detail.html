@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Your html has been sanitized! <small><a href="{% url 'comments_comment_list' %}">view all</a></small></h1>
+    <div class="row-fluid">
+        <div class="comment">
+            {{ object.comment|safe }}
+        </div>
+    </div>
+{% endblock %}

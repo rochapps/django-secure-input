@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center">Comments <i class="icon-edit"></i></h1>
+    <p class="text-center"><a href="{% url "comments_comment_create" %}" class="btn btn-primary">Create new comment</a>
+        <a href="{% url "comments_comment_wysiwyg" %}" class="btn">Create new comment with editor</a></p>
+    <br>
+    {% for comment in object_list %}
+        <div class="well">
+            <div class="comment">
+                {{ comment.comment|safe }}
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

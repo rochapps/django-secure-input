@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Django Secure Input Example</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+    <style>
+        textarea{
+            height: 140px;
+            width: 500px;
+        }
+        .errors,
+        .errorlist{
+            color: red;
+        }
+        .editor{
+            background: rgb(238,238,238);
+            padding: 10px 20px;
+        }
+        .bootstrap-wysiwyg{
+            height: 140px;
+            width: 500px;
+            background: white;
+        }
+    </style>
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <div class="wrapper">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>
