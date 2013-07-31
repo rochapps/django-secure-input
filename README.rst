@@ -1,0 +1,73 @@
+secure_input
+========================
+
+Let your users input html into your textareas without losing any sleep.
+django-secure-input sanitizes user's input and allows only some tags to be
+interpreted as html and escapes the rest. By default, <script> are not allowed.
+
+
+Requirements/Installing
+-----------------------------------
+
+django-secure-input requires Python 2.6-2.7 or 3.2+. It also requires Django >= 1.4
+and bleach.
+
+The easiest way to install django-secure-input is using `pip <http://www.pip-installer.org/>`_::
+
+    pip install django-secure-input
+
+
+secure_widgets
+-----------------------------------
+
+Use custom form field in your forms and you are all set. The defaults provided
+by our validation method can be overwritten, to set your own overwrite this on
+your settings.py file:
+
+    'ALLOWED_TAGS':       Tuple of allowed tags, for example: ('p', 'h2', 'h3').
+    'ALLOWED_STYLES':     Tuple of inline style allowable in your html, for
+                          example: ('font', 'font-size', 'color').
+    'ALLOWED_ATTRIBUTES': A dict of tags -> attributes, for example:
+                          {'a': ['href', 'title'], '*': ['class']}
+
+
+Example
+-----------------------------------
+
+    from django import forms
+    from secure_input.fields import SecureCharFieldInput
+
+    class MySecureForm(forms.ModelForm):
+        text = SecureCharFieldInput()
+
+        class Meta:
+            model = MyModel
+
+
+Running the Tests
+------------------------------------
+
+You can run the tests with via::
+
+    python setup.py test
+
+or::
+
+    python runtests.py
+
+
+License
+--------------------------------------
+
+django-secure-input is released under the BSD License. See the
+`LICENSE <https://github.com/caktus/django-secure-input/blob/master/LICENSE>`_ file for more details.
+
+
+Contributing
+--------------------------------------
+
+If you think you've found a bug or are interested in contributing to this project
+check out `django-secure-input on Github <https://github.com/rochapps/django-secure-input>`_.
+
+Development sponsored by `RochApps, LLC
+<http://www.rochapps.com/services>`_.
