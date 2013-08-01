@@ -1,6 +1,7 @@
 import bleach
 from django import forms
 from django.conf import settings
+import markdown
 
 ALLOWED_TAGS = ('a', 'abbr', 'acronym', 'b', 'blockquote', 'code', 'em', 'i',
                 'li', 'ol', 'strong', 'ul', 'font', 'div', 'span', 'br',
@@ -29,4 +30,16 @@ class SecureCharFieldInput(forms.CharField):
         styles = getattr(settings, 'ALLOWED_STYLES', ALLOWED_STYLES)
         cleaned_value = bleach.clean(value, tags=tags, attributes=attributes,
                                      styles=styles)
+        return cleaned_value
+
+
+class SecureMarDownField(SecureCharFieldInput):
+    """
+    Textarea field that doesnt require any type of widget and saves the value
+    and marks down the value of the field.
+    """
+
+    def clean(self, value):
+        value = markdown.markdown(value)
+        cleaned_value = super(SecureMarDownField, self).clean(value)
         return cleaned_value
