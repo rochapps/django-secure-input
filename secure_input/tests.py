@@ -82,8 +82,9 @@ class WYSIWYGWidgetTest(TestCase):
     def test_render(self):
         rendered_form = self.form.as_p()
         expected = u'<p><label for="id_text">Text:</label> ' \
-                   u'<input class="hidden secure-input" ' \
-                   u'data-editor="text-secure-input" id="id_text" ' \
-                   u'name="text" type="text" /><div class="bootstrap-wysiwyg"' \
-                   u' id="text-secure-input" /></div></p>'
+                   u'<textarea class="hidden secure-input" ' \
+                   u'cols="40" data-editor="text-secure-input" ' \
+                   u'id="id_text" name="text" rows="10">\r\n' \
+                   u'</textarea><div class="bootstrap-wysiwyg" ' \
+                   u'id="text-secure-input" /></div></p>'
         self.assertEqual(rendered_form, expected)
