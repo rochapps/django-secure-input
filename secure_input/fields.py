@@ -3,6 +3,8 @@ from django import forms
 from django.conf import settings
 import markdown
 
+from .widgets import MarkDownWidget
+
 ALLOWED_TAGS = ('a', 'abbr', 'acronym', 'b', 'blockquote', 'code', 'em', 'i',
                 'li', 'ol', 'strong', 'ul', 'font', 'div', 'span', 'br',
                 'strike', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'table',
@@ -38,6 +40,8 @@ class SecureMarDownField(SecureCharFieldInput):
     Textarea field that doesnt require any type of widget and saves the value
     and marks down the value of the field.
     """
+
+    widget = MarkDownWidget
 
     def clean(self, value):
         value = markdown.markdown(value)
