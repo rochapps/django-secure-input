@@ -32,6 +32,9 @@ Use one of our provided custom form fields in your forms and you are all set.
     **WYSIWYGField**
         wysiwyg widget
 
+    **MiniWYSIWYGField**
+        wysiwyg widget (limiited tools)
+
 
 
 
@@ -56,10 +59,10 @@ Example
 Simplest way to start using our custom fields::
 
     from django import forms
-    from secure_input.fields import SecureCharFieldInput
+    from secure_input.fields import MiniWYSIWYGField
 
     class MySecureForm(forms.ModelForm):
-        text = SecureCharFieldInput()
+        text = MiniWYSIWYGField()
 
         class Meta:
             model = MyModel
