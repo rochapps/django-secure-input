@@ -84,9 +84,9 @@ and {{form.media.js }}::
 - <script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/bootstrap-wysiwyg.js" type="text/javascript"></script>
 - <script src="{{ STATIC_URL }}secure_input/js/plugin.js" type="text/javascript"></script>
 
-Finally, you need to initialize our js plugin::
+Finally, you need to initialize the js plugin::
 
-    **$("#commentForm").secureInput();**
+    $("#commentForm").secureInput();
 
 
 Documentation
