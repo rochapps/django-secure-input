@@ -53,6 +53,7 @@ your settings.py file:
 
 Example
 -----------------------------------
+Simplest way to start using our custom fields::
 
     from django import forms
     from secure_input.fields import SecureCharFieldInput
