@@ -26,26 +26,28 @@ Fields
 
 Use one of our provided custom form fields in your forms and you are all set.
 
+    **SafeCharFieldInput**
+        Textarea that allows saving html.
 
-    'SafeCharFieldInput':  Textarea that allows saving html.
-    'WYSIWYGField': 'wysiwyg widget
+    **WYSIWYGField**
+        wysiwyg widget
 
 
 
 
-Defaults
+Defaults settings
 -----------------------------------
 
 The defaults provided
 by our validation method can be overwritten, to set your own overwrite this on
 your settings.py file:
 
-    'ALLOWED_TAGS':       Tuple of allowed tags, for example: ('p', 'h2', 'h3').
+    **ALLOWED_TAGS**:       Tuple of allowed tags, for example: ('p', 'h2', 'h3').
 
-    'ALLOWED_STYLES':     Tuple of inline style allowable in your html, for
+    **ALLOWED_STYLES**:     Tuple of inline style allowable in your html, for
                           example: ('font', 'font-size', 'color').
 
-    'ALLOWED_ATTRIBUTES': A dict of tags -> attributes, for example:
+    **ALLOWED_ATTRIBUTES**: A dict of tags -> attributes, for example:
                           {'a': ['href', 'title'], '*': ['class']}
 
 
@@ -67,20 +69,20 @@ Template
 Make sure to include the following css and js files in the template where you
 are rendering your form.
 
-<link href="{{ STATIC_URL }}secure_input/bootstrap/css/bootstrap.css" rel="stylesheet" type="css/text">
-<link href="{{ STATIC_URL }}secure_input/font-awesome/css/font-awesome.css" rel="stylesheet" type="css/text">
-<link href="{{ STATIC_URL }}secure_input/css/basicEditor.css" rel="stylesheet" type="css/text">
+- <link href="{{ STATIC_URL }}secure_input/bootstrap/css/bootstrap.css" rel="stylesheet" type="css/text">
+- <link href="{{ STATIC_URL }}secure_input/font-awesome/css/font-awesome.css" rel="stylesheet" type="css/text">
+- <link href="{{ STATIC_URL }}secure_input/css/basicEditor.css" rel="stylesheet" type="css/text">
 
-<script src="{{ STATIC_URL }}secure_input/js/libs/jquery.js" type="text/javascript"></script>
-<script src="{{ STATIC_URL }}secure_input/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/external/jquery.hotkeys.js" type="text/javascript"></script>
-<script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/bootstrap-wysiwyg.js" type="text/javascript"></script>
-<script src="{{ STATIC_URL }}secure_input/js/plugin.js" type="text/javascript"></script>
 
-Also, you need to initialize our secureInput js plugin.
-$(document).ready(function(){
-    $("#commentForm").secureInput();
-});
+- <script src="{{ STATIC_URL }}secure_input/js/libs/jquery.js" type="text/javascript"></script>
+- <script src="{{ STATIC_URL }}secure_input/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+- <script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/external/jquery.hotkeys.js" type="text/javascript"></script>
+- <script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/bootstrap-wysiwyg.js" type="text/javascript"></script>
+- <script src="{{ STATIC_URL }}secure_input/js/plugin.js" type="text/javascript"></script>
+
+Finally, you need to initialize our js plugin:
+
+    **$("#commentForm").secureInput();**
 
 
 Documentation
