@@ -37,7 +37,7 @@ class SecureTextInputTests(TestCase):
 
     @property
     def clean_text(self):
-        text = "<h1>This is a nice person</h1><h2>Using safe markup when you " \
+        text = "<h2>This is a nice person</h2><h2>Using safe markup when you " \
                "posting in the internet is important</h2><p>When you play nice" \
                "you make the internet more safe for everyone and make" \
                "programmers lives easier"
