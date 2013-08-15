@@ -70,10 +70,13 @@ Template
 Make sure to include the following css and js files in the template where you
 are rendering your form.
 
+In your template {{ form.media.css }}::
+
 - <link href="{{ STATIC_URL }}secure_input/bootstrap/css/bootstrap.css" rel="stylesheet" type="css/text">
 - <link href="{{ STATIC_URL }}secure_input/font-awesome/css/font-awesome.css" rel="stylesheet" type="css/text">
 - <link href="{{ STATIC_URL }}secure_input/css/basicEditor.css" rel="stylesheet" type="css/text">
 
+and {{form.media.js }}::
 
 - <script src="{{ STATIC_URL }}secure_input/js/libs/jquery.js" type="text/javascript"></script>
 - <script src="{{ STATIC_URL }}secure_input/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -81,7 +84,7 @@ are rendering your form.
 - <script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/bootstrap-wysiwyg.js" type="text/javascript"></script>
 - <script src="{{ STATIC_URL }}secure_input/js/plugin.js" type="text/javascript"></script>
 
-Finally, you need to initialize our js plugin:
+Finally, you need to initialize our js plugin::
 
     **$("#commentForm").secureInput();**
 

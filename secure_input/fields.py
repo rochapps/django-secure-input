@@ -23,7 +23,7 @@ class WYSIWYGField(SafeCharFieldInput):
     widget = WYSIWYGWidget
 
 
-class MiniWYSIWYGField(SafeCharFieldInput):
+class MiniWYSIWYGField(WYSIWYGField):
     """
         Field for displaying a wysiwyg widget with only a few tools.
     """
