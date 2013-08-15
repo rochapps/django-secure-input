@@ -95,7 +95,7 @@ Finally, you need to initialize the js plugin::
 Documentation
 -----------------------------------
 
-Additional documentation on using django-sticky-uploads is available on
+Additional documentation on using django-secure-input is available on
 `Read The Docs <http://readthedocs.org/docs/django-secure-input/>`_.
 
 
@@ -115,7 +115,7 @@ License
 --------------------------------------
 
 django-secure-input is released under the BSD License. See the
-`LICENSE <https://github.com/caktus/django-secure-input/blob/master/LICENSE>`_ file for more details.
+`LICENSE <https://github.com/rochapps/django-secure-input/blob/master/LICENSE>`_ file for more details.
 
 
 Contributing
