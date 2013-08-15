@@ -1,21 +1,27 @@
 from django import forms
 
-from secure_input.fields import SecureCharFieldInput
-from secure_input.widgets import WYSIWYGWidget
+from secure_input.fields import SafeCharFieldInput, WYSIWYGField, MiniWYSIWYGField
 from .models import Comment
 
 __all__ = ('SecureCommentForm', 'SecureWYSIWYGCommentForm', )
 
 
 class SecureCommentForm(forms.ModelForm):
-    comment = SecureCharFieldInput()
+    comment = SafeCharFieldInput()
 
     class Meta:
         model = Comment
 
 
 class SecureWYSIWYGCommentForm(forms.ModelForm):
-    comment = SecureCharFieldInput(widget=WYSIWYGWidget)
+    comment = WYSIWYGField()
+
+    class Meta:
+        model = Comment
+
+
+class SecureMiniWYSIWYGCommentForm(forms.ModelForm):
+    comment = MiniWYSIWYGField()
 
     class Meta:
         model = Comment

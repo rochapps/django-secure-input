@@ -1,0 +1,22 @@
+{% extends 'editor/editor.html' %}
+
+{% block content %}
+    <div class="well">
+        <h1 class="text-center"><i class="icon-lock"></i> Add your comment<br><small>Enter as much malicious input as you want!</small></h1>
+        <form class="" method="POST" action="{% url 'comments_comment_miniwysiwyg' %}" id="commentForm">
+            {% csrf_token %}
+            <div class="control-group">
+                <label class="control-label"><strong>Comment</strong></label>
+                <hr>
+                <div class="controls editor">
+                    {{ form.comment }}
+                </div>
+                <div>{{ form.comment.errors }}</div>
+            </div>
+            <div class="form-actions">
+                <button class="btn" onclick="window.location='/'; return false;">Cancel</button>
+                <input type="submit" value="Save" class="btn btn-success"/>
+            </div>
+        </form>
+    </div>
+{% endblock %}

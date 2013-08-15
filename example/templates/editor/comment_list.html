@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 class="text-center">Comments <i class="icon-edit"></i></h1>
+    <h1 class="text-center">django-secure-input <i class="icon-edit"></i></h1>
     <p class="text-center"><a href="{% url "comments_comment_create" %}" class="btn btn-primary">Create new comment</a>
-        <a href="{% url "comments_comment_wysiwyg" %}" class="btn">Create new comment with editor</a></p>
+        <a href="{% url "comments_comment_wysiwyg" %}" class="btn btn-warning">Create new comment with editor</a>
+        <a href="{% url "comments_comment_miniwysiwyg" %}" class="btn btn-success">Create new comment with (mini)editor</a></p>
     <br>
     {% for comment in object_list %}
         <div class="well">

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{#Required css#}
+<link href="{{ STATIC_URL }}secure_input/bootstrap/css/bootstrap.css" rel="stylesheet" type="css/text">
+<link href="{{ STATIC_URL }}secure_input/font-awesome/css/font-awesome.css" rel="stylesheet" type="css/text">
+<link href="{{ STATIC_URL }}secure_input/css/basicEditor.css" rel="stylesheet" type="css/text">
+<style>
+    .errors,
+    .errorlist{
+        color: red;
+    }
+</style>
+{% endblock %}
+
+{% block js %}
+{#Required js#}
+<script src="{{ STATIC_URL }}secure_input/js/libs/jquery.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}secure_input/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/external/jquery.hotkeys.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/bootstrap-wysiwyg.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}secure_input/js/plugin.js" type="text/javascript"></script>
+
+{#initialize plugin#}
+<script>
+    $(document).ready(function(){
+        $("#commentForm").secureInput();
+    });
+</script>
+{% endblock %}

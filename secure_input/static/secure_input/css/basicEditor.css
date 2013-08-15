@@ -1,4 +1,13 @@
+.editor-wrapper{
+    background: rgb(238,238,238);
+    padding: 10px 20px;
+}
 .bootstrap-wysiwyg{
-    min-width: 200px;
-    min-width: 300px;
+    height: 140px;
+    width: 960px;
+    background: white;
+    padding: 5px;
+}
+.bootstrap-wysiwyg:focus{
+    outline: none;
 }

@@ -21,10 +21,22 @@ The easiest way to install django-secure-input is using `pip <http://www.pip-ins
     pip install django-secure-input
 
 
-secure_widgets
+Fields
 -----------------------------------
 
-Use custom form field in your forms and you are all set. The defaults provided
+Use one of our provided custom form fields in your forms and you are all set.
+
+
+    'SafeCharFieldInput':  Textarea that allows saving html.
+    'WYSIWYGField': 'wysiwyg widget
+
+
+
+
+Defaults
+-----------------------------------
+
+The defaults provided
 by our validation method can be overwritten, to set your own overwrite this on
 your settings.py file:
 
@@ -48,6 +60,27 @@ Example
 
         class Meta:
             model = MyModel
+
+
+Template
+-------------------------------------
+Make sure to include the following css and js files in the template where you
+are rendering your form.
+
+<link href="{{ STATIC_URL }}secure_input/bootstrap/css/bootstrap.css" rel="stylesheet" type="css/text">
+<link href="{{ STATIC_URL }}secure_input/font-awesome/css/font-awesome.css" rel="stylesheet" type="css/text">
+<link href="{{ STATIC_URL }}secure_input/css/basicEditor.css" rel="stylesheet" type="css/text">
+
+<script src="{{ STATIC_URL }}secure_input/js/libs/jquery.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}secure_input/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/external/jquery.hotkeys.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}secure_input/bootstrap-wysiwyg/bootstrap-wysiwyg.js" type="text/javascript"></script>
+<script src="{{ STATIC_URL }}secure_input/js/plugin.js" type="text/javascript"></script>
+
+Also, you need to initialize our secureInput js plugin.
+$(document).ready(function(){
+    $("#commentForm").secureInput();
+});
 
 
 Documentation

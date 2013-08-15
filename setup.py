@@ -36,7 +36,7 @@ setup(
     install_requires=['bleach>=1.2.2', 'Markdown==2.3.1'],
     test_suite="runtests.runtests",
     tests_require=(
-        'bleach>=1.2.2', 'Markdown==2.3.1',
+        'bleach>=1.2.2',
     ),
     zip_safe=False,
 )

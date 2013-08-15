@@ -5,6 +5,9 @@ from django.core.urlresolvers import reverse
 class Comment(models.Model):
     comment = models.TextField()
 
+    class Meta:
+        ordering = ('-id', )
+
     def __unicode__(self):
         return self.text
 
