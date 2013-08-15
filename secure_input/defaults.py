@@ -3,7 +3,7 @@ from django.conf import settings
 
 ALLOWED_TAGS = ('a', 'abbr', 'acronym', 'b', 'blockquote', 'code', 'em', 'i',
                 'li', 'ol', 'strong', 'ul', 'font', 'div', 'span', 'br',
-                'strike', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'table',
+                'strike', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'table',
                 'tr', 'td', 'th', 'thead', 'tbody', 'dl', 'dd', 'u', )
 
 ALLOWED_ATTRIBUTES = {'*': ['class'], 'a': ['href', 'title'],
