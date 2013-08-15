@@ -21,6 +21,11 @@ The easiest way to install django-secure-input is using `pip <http://www.pip-ins
     pip install django-secure-input
 
 
+The add it to your install apps::
+
+    INSTALLED_APP += ('secure_input')
+
+
 Fields
 -----------------------------------
 
