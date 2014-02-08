@@ -17,4 +17,5 @@ ALLOWED_STYLES = ['font-size', 'color', 'text-align', 'text-decoration',
 ALLOWED_TAGS = getattr(settings, 'ALLOWED_TAGS', ALLOWED_TAGS)
 ALLOWED_ATTRIBUTES = getattr(settings, 'ALLOWED_ATTRIBUTES', ALLOWED_ATTRIBUTES)
 ALLOWED_STYLES = getattr(settings, 'ALLOWED_STYLES', ALLOWED_STYLES)
+STRIP_TAGS = getattr(settings, 'STRIP_TAGS', True)
 
