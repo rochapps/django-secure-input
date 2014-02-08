@@ -60,8 +60,8 @@ class SecureTextInputTests(TestCase):
         form = self.form(data)
         self.failUnless(form.is_valid())
         cleaned_text = form.cleaned_data['text']
-        escaped_text = u"<p>This tag is valid.</p>&lt;aside&gt;" \
-                       u"This one is not.&lt;/aside&gt;"
+        escaped_text = u"<p>This tag is valid.</p>" \
+                       u"This one is not."
         self.assertEqual(cleaned_text, escaped_text)
 
     def test_clean_text(self):
