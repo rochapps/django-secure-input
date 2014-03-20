@@ -32,7 +32,7 @@ class SecureTextInputTests(TestCase):
 
     @property
     def almost_clean_text(self):
-        text = "<p>This tag is valid.</p><aside>This one is not.</aside>"
+        text = "<p><a href='/bad/'>This tag</a> is valid.</p><aside>This one is not.</aside>"
         return text
 
     @property
@@ -51,8 +51,7 @@ class SecureTextInputTests(TestCase):
         form = self.form(data)
         self.failUnless(form.is_valid())
         cleaned_text = form.cleaned_data['text']
-        escaped_text = u"&lt;script&gt;alert('I am taking over your browser')" \
-                       u"&lt;/script&gt;"
+        escaped_text = u"alert('I am taking over your browser')"
         self.assertEqual(cleaned_text, escaped_text)
 
     def test_almost_clean_text(self):
@@ -60,7 +59,7 @@ class SecureTextInputTests(TestCase):
         form = self.form(data)
         self.failUnless(form.is_valid())
         cleaned_text = form.cleaned_data['text']
-        escaped_text = u"<p>This tag is valid.</p>" \
+        escaped_text = u'<p><a rel="nofollow" href="/bad/">This tag</a> is valid.</p>' \
                        u"This one is not."
         self.assertEqual(cleaned_text, escaped_text)
 

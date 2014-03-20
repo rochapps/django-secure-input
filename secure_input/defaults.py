@@ -6,7 +6,7 @@ ALLOWED_TAGS = ('a', 'abbr', 'acronym', 'b', 'blockquote', 'code', 'em', 'i',
                 'strike', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'table',
                 'tr', 'td', 'th', 'thead', 'tbody', 'dl', 'dd', 'u', )
 
-ALLOWED_ATTRIBUTES = {'*': ['class'], 'a': ['href', 'title'],
+ALLOWED_ATTRIBUTES = {'*': ['class'], 'a': ['href', 'title', 'rel'],
                       'abbr': ['title'], 'acronym': ['title'],
                       'font': ['face', 'size', ], 'div': ['style', ],
                       'span': ['style', ], 'ul': ['style', ], }
