@@ -2,16 +2,20 @@ language: python
 
 python:
   - "2.7"
+  - "3.6"
 
 env:
-  - TOXENV=py27
+  - DJANGO=15
+  - DJANGO=16
+  - DJANGO=17
+  - DJANGO=18
+  - DJANGO=19
+  - DJANGO=110
+  - DJANGO=111
 
 install:
-  - pip install tox --use-mirrors
+  - pip install tox
+  - export TOXENV=py${TRAVIS_PYTHON_VERSION//./}-django${DJANGO}
 
 script:
-    - tox
-
-branches:
-  only:
-    - master
+    - tox -e ${TOXENV}
