@@ -59,9 +59,11 @@ class SecureTextInputTests(TestCase):
         form = self.form(data)
         self.failUnless(form.is_valid())
         cleaned_text = form.cleaned_data['text']
-        escaped_text = u'<p><a rel="nofollow" href="/bad/">This tag</a> is valid.</p>' \
-                       u"This one is not."
-        self.assertEqual(cleaned_text, escaped_text)
+        escaped_text_v1 = u'<p><a rel="nofollow" href="/bad/">This tag</a> is valid.</p>' \
+                          u"This one is not."
+        escaped_text_v2 = u'<p><a href="/bad/" rel="nofollow">This tag</a> is valid.</p>' \
+                          u"This one is not."
+        self.assert_(cleaned_text == escaped_text_v1 or cleaned_text == escaped_text_v2)
 
     def test_clean_text(self):
         text = self.clean_text
