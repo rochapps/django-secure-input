@@ -2,16 +2,56 @@ language: python
 
 python:
   - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.6"
 
 env:
-  - TOXENV=py27
+  - DJANGO=15
+  - DJANGO=16
+  - DJANGO=17
+  - DJANGO=18
+  - DJANGO=19
+  - DJANGO=110
+  - DJANGO=111
 
 install:
-  - pip install tox --use-mirrors
+  - pip install tox
+  - export TOXENV=py${TRAVIS_PYTHON_VERSION//./}-django${DJANGO}
 
 script:
-    - tox
+    - tox -e ${TOXENV}
 
-branches:
-  only:
-    - master
+matrix:
+  exclude:
+    - python: 3.3
+      env: DJANGO=15
+    - python: 3.3
+      env: DJANGO=16
+    - python: 3.3
+      env: DJANGO=17
+    - python: 3.3
+      env: DJANGO=19
+    - python: 3.3
+      env: DJANGO=110
+    - python: 3.3
+      env: DJANGO=111
+    - python: 3.4
+      env: DJANGO=15
+    - python: 3.4
+      env: DJANGO=16
+    - python: 3.4
+      env: DJANGO=17
+    - python: 3.5
+      env: DJANGO=15
+    - python: 3.5
+      env: DJANGO=16
+    - python: 3.5
+      env: DJANGO=17
+    - python: 3.6
+      env: DJANGO=15
+    - python: 3.6
+      env: DJANGO=16
+    - python: 3.6
+      env: DJANGO=17
